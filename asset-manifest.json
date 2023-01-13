@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-props-state/static/css/main.83913918.css",
+    "main.js": "/react-props-state/static/js/main.faef3c63.js",
+    "static/media/App.png": "/react-props-state/static/media/App.4c5fe14fb62d094634fb.png",
+    "static/media/PicComponent.png": "/react-props-state/static/media/PicComponent.b80286e5520b47e96489.png",
+    "static/media/List.png": "/react-props-state/static/media/List.dc596dd72eb169411e11.png",
+    "index.html": "/react-props-state/index.html",
+    "main.83913918.css.map": "/react-props-state/static/css/main.83913918.css.map",
+    "main.faef3c63.js.map": "/react-props-state/static/js/main.faef3c63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83913918.css",
+    "static/js/main.faef3c63.js"
+  ]
+}
