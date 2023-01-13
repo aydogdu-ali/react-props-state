@@ -1,5 +1,5 @@
 section {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,10 +7,10 @@ section {
 
 .container {
   width: 60vh;
-  margin: 0.3rem;
+  margin: 0.3rem 0;
   background: white;
   border-radius: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -53,7 +53,7 @@ section {
   width: 50%;
   border-color: transparent;
   background: darkmagenta;
-  margin: 2rem auto 0 auto;
+  margin: 1rem auto 0 auto;
   font-size: 1.2rem;
   padding: 0.5rem 0;
   border-radius: 10px;
@@ -65,4 +65,41 @@ section {
   text-align: center;
   font-size: 2rem;
   margin-top: 0.5rem;
+}
+
+/*Picture Component CSS*/
+
+.resim{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.resim h6{
+  text-align: center;
+  font-size: 0.95rem;
+
+  }
+
+.pic {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1px 1px;
+  width: 100rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.pic:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .resim {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+  }
 }
