@@ -8,10 +8,12 @@ function App() {
 
   const[person, setPerson] = useState(data)
   const [show, setShow] = useState(true)
+  const[text, setText]= useState('Tümünü Temizle')
   
   const handleclick = ()=>{
     setPerson([])
-    setShow(!show)
+    setShow(false)
+    setText('Hoşçakalın')
   }
 
   return (
@@ -19,9 +21,9 @@ function App() {
       <div className="container">
         { show && <h3> Bu Ay {person.length} Personelimizin Doğum Günü </h3>}
         <List person={person} /> {/*props olarak alt componente gönderiyoruz*/}
-        <button onClick={handleclick}>Tümünü Temizle</button>
+        <button onClick={handleclick}>{text}</button>
         {!show &&  (
-          <div className="value"> Çalışanlarımız Değerlidir.</div>
+          <div className="value"> İnsan Değerlidir.</div>
         )  }
       </div>
     </section>
