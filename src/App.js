@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import List from "./components/List" // ap.js içinde çağıracağız componnetleri import ediyorum.
+// import Picture from './components/Picture'// ap.js içinde çağıracağız componnetleri import ediyorum.
+import {data} from "./components/data.js" // buradaki bilgileri props olarak göndermek için import ediyorum
+import { useState } from 'react'; // değişecek state durumu için useState Hook'unu import ediyoruz.
 
 function App() {
+
+  const[person, setPerson] = useState(data)
+  const [show, setShow] = useState(true)
+  
+  const handleclick = ()=>{
+    setPerson([])
+    setShow(!show)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <div className="container">
+        { show && <h3> Bu Ay {person.length} Personelimizin Doğum Günü </h3>}
+        <List person={person} /> {/*props olarak alt componente gönderiyoruz*/}
+        <button onClick={handleclick}>Tümünü Temizle</button>
+        {!show &&  (
+          <div className="value"> Çalışanlarımız Değerlidir.</div>
+        )  }
+      </div>
+    </section>
   );
 }
 
