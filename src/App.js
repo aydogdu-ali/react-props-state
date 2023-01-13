@@ -5,26 +5,27 @@ import {data} from "./components/data.js" // buradaki bilgileri props olarak gö
 import { useState } from 'react'; // değişecek state durumu için useState Hook'unu import ediyoruz.
 
 function App() {
+  const [person, setPerson] = useState(data); // datayı usestateye başlangıç olarak atadık. Datamız bir array 
+  const [show, setShow] = useState(true); //uygulamadaki h3 metinlerinin görünmesi amacıyla tanımladım.
+  const [text, setText] = useState("Tümünü Temizle"); //uygulamadaki buton metnini değiştirilmesi amacıyla tanımladım.
 
-  const[person, setPerson] = useState(data)
-  const [show, setShow] = useState(true)
-  const[text, setText]= useState('Tümünü Temizle')
-  
-  const handleclick = ()=>{
-    setPerson([])
-    setShow(false)
-    setText('Hoşçakalın')
-  }
+
+  // butona tıkladığımız olan tetiklenecek olayları tanımladık.
+  const handleclick = () => {
+    setPerson([]); /*datamız bir arraydi eğer butona tıklarsak array içeriği boş olacaktır. */
+    setShow(false);// h3 metinlerin başlangıç değerini değiştirdik.
+    setText("İyi ki Doğdunuz"); // butonun text metnini değiştirdik.
+  };
 
   return (
     <section>
       <div className="container">
-        { show && <h3> Bu Ay {person.length} Personelimizin Doğum Günü </h3>}
-        <List person={person} /> {/*props olarak alt componente gönderiyoruz*/}
+        {/*Burda arrayimizde kaç personel varsa o kadar sayıyı dinamik olarak döndürür.*/}
+        {show && <h3> Bu Ay {person.length} Personelimizin Doğum Günü </h3>}
+        {/*props olarak alt componente gönderiyoruz*/}
+        <List person={person} />
         <button onClick={handleclick}>{text}</button>
-        {!show &&  (
-          <div className="value"> İnsan Değerlidir.</div>
-        )  }
+        {!show && <h3 className="value"> İnsan Değerlidir.</h3>}
       </div>
     </section>
   );
