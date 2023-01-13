@@ -25,7 +25,7 @@ const Picture = () => {
       <div>
         <h6>List Componenti </h6>
         <p>
-          <a target="_blank" href={App} rel="noopener noreferrer">
+          <a target="_blank" href={List} rel="noopener noreferrer">
             <img
               className="pic"
               src={List}
