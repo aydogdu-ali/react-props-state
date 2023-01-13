@@ -1,6 +1,6 @@
 import './App.css';
 import List from "./components/List" // ap.js içinde çağıracağız componnetleri import ediyorum.
-// import Picture from './components/Picture'// ap.js içinde çağıracağız componnetleri import ediyorum.
+import Picture from './components/Picture'// ap.js içinde çağıracağız componnetleri import ediyorum.
 import {data} from "./components/data.js" // buradaki bilgileri props olarak göndermek için import ediyorum
 import { useState } from 'react'; // değişecek state durumu için useState Hook'unu import ediyoruz.
 
@@ -18,17 +18,19 @@ function App() {
   };
 
   return (
-    <section>
-      <div className="container">
-        {/*Burda arrayimizde kaç personel varsa o kadar sayıyı dinamik olarak döndürür.*/}
-        {show && <h3> Bu Ay {person.length} Personelimizin Doğum Günü </h3>}
-        {/*props olarak alt componente gönderiyoruz*/}
-        <List person={person} />
-        <button onClick={handleclick}>{text}</button>
-        {!show && <h3 className="value"> İnsan Değerlidir.</h3>}
-      </div>
-    </section>
+    <div>
+      <section>
+        <div className="container">
+          {/*Burda arrayimizde kaç personel varsa o kadar sayıyı dinamik olarak döndürür.*/}
+          {show && <h3> Bu Ay {person.length} Personelimizin Doğum Günü </h3>}
+          {/*props olarak alt componente gönderiyoruz*/}
+          <List person={person} />
+          <button onClick={handleclick}>{text}</button>
+          {!show && <h3 className="value"> İnsan Değerlidir.</h3>}
+        </div>
+      </section>
+      <Picture />
+    </div>
   );
 }
-
 export default App;
